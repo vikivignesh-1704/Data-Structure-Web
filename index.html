@@ -3,10 +3,46 @@
     <head>
         <title>Data Structure</title>
         <link rel="icon" href="img/data icon.png">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0 20px;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            h1, h2, h3 {
+                color: #444;
+            }
+            a {
+                color: #0066cc;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            ul, ol {
+                margin: 10px 0;
+                padding-left: 20px;
+            }
+            pre {
+                background: #f4f4f4;
+                padding: 10px;
+                border-left: 3px solid #ccc;
+                overflow-x: auto;
+            }
+            code {
+                font-family: Consolas, monospace;
+                background: #eee;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+        </style>
         
     </head>
 
-     <body bgcolor="blue" style="color: white;">
+     <body>
         <center>
         <h1>Data Structures</h1>
         <p>Learn more about data structure basics here for free</p>
@@ -57,6 +93,158 @@
         <button>Download PDF</button>
         </a>
         </h4>
+        <h2>Key Data Structures in C</h2>
+
+    <h3>1. Arrays</h3>
+    <p>Fixed-size sequential collection of elements of the same data type.</p>
+    <p><strong>Common Operations:</strong></p>
+    <ul>
+        <li>Accessing an element: <code>O(1)</code></li>
+        <li>Insertion/Deletion: <code>O(n)</code> (if shifting is required)</li>
+        <li>Searching: <code>O(n)</code> (linear search) or <code>O(log n)</code> (binary search if sorted).</li>
+    </ul>
+    <pre><code>int arr[5] = {1, 2, 3, 4, 5};
+for (int i = 0; i < 5; i++) {
+    printf("%d ", arr[i]);
+}</code></pre>
+
+    <h3>2. Linked List</h3>
+    <p>A collection of nodes where each node contains data and a pointer to the next node.</p>
+    <p><strong>Types:</strong></p>
+    <ul>
+        <li>Singly Linked List</li>
+        <li>Doubly Linked List</li>
+        <li>Circular Linked List</li>
+    </ul>
+    <p><strong>Common Operations:</strong></p>
+    <ul>
+        <li>Insertion: <code>O(1)</code> at the beginning, <code>O(n)</code> for other positions.</li>
+        <li>Deletion: <code>O(1)</code> at the beginning, <code>O(n)</code> for other positions.</li>
+        <li>Searching: <code>O(n)</code>.</li>
+    </ul>
+    <pre><code>struct Node {
+    int data;
+    struct Node* next;
+};
+
+void printList(struct Node* n) {
+    while (n != NULL) {
+        printf("%d -> ", n->data);
+        n = n->next;
+    }
+    printf("NULL\n");
+}</code></pre>
+
+    <h3>3. Stack</h3>
+    <p>A LIFO (Last In, First Out) data structure.</p>
+    <p><strong>Common Operations:</strong></p>
+    <ul>
+        <li><code>push()</code>: Add an element to the top.</li>
+        <li><code>pop()</code>: Remove the top element.</li>
+        <li><code>peek()</code>: View the top element without removing it.</li>
+    </ul>
+    <pre><code>int stack[MAX];
+int top = -1;
+
+void push(int value) {
+    if (top == MAX - 1) {
+        printf("Stack Overflow\n");
+    } else {
+        stack[++top] = value;
+    }
+}
+
+void pop() {
+    if (top == -1) {
+        printf("Stack Underflow\n");
+    } else {
+        printf("Popped: %d\n", stack[top--]);
+    }
+}</code></pre>
+
+    <h3>4. Queue</h3>
+    <p>A FIFO (First In, First Out) data structure.</p>
+    <p><strong>Common Operations:</strong></p>
+    <ul>
+        <li><code>enqueue()</code>: Add an element to the rear.</li>
+        <li><code>dequeue()</code>: Remove an element from the front.</li>
+    </ul>
+    <pre><code>int queue[MAX];
+int front = -1, rear = -1;
+
+void enqueue(int value) {
+    if (rear == MAX - 1) {
+        printf("Queue Overflow\n");
+    } else {
+        if (front == -1) front = 0;
+        queue[++rear] = value;
+    }
+}</code></pre>
+
+    <h3>5. Trees</h3>
+    <p>A hierarchical data structure with nodes.</p>
+    <p><strong>Key Concepts:</strong></p>
+    <ul>
+        <li>Binary Trees</li>
+        <li>Binary Search Trees (BSTs)</li>
+        <li>Tree Traversals (Inorder, Preorder, Postorder)</li>
+    </ul>
+    <pre><code>struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+};
+
+void inorderTraversal(struct Node* root) {
+    if (root != NULL) {
+        inorderTraversal(root->left);
+        printf("%d ", root->data);
+        inorderTraversal(root->right);
+    }
+}</code></pre>
+
+    <h3>6. Graphs</h3>
+    <p>A collection of vertices and edges.</p>
+    <p><strong>Representation:</strong></p>
+    <ul>
+        <li>Adjacency Matrix</li>
+        <li>Adjacency List</li>
+    </ul>
+    <pre><code>struct Node {
+    int vertex;
+    struct Node* next;
+};
+
+struct Graph {
+    int numVertices;
+    struct Node** adjLists;
+};</code></pre>
+
+    <h2>Advanced Data Structures</h2>
+    <ul>
+        <li><strong>Heaps:</strong> Min-Heap, Max-Heap</li>
+        <li><strong>Trie:</strong> Prefix Tree</li>
+        <li><strong>Segment Tree:</strong> Efficient range queries</li>
+        <li><strong>Disjoint Set:</strong> Union-Find</li>
+    </ul>
+
+    <h2>Books and Online Resources</h2>
+    <ul>
+        <li><strong>Books:</strong>
+            <ul>
+                <li><em>"Data Structures Using C"</em> by Reema Thareja</li>
+                <li><em>"Data Structures Through C"</em> by Yashavant Kanetkar</li>
+                <li><em>"Introduction to Algorithms"</em> by Cormen, Leiserson, Rivest, and Stein</li>
+            </ul>
+        </li>
+        <li><strong>Online Tutorials:</strong>
+            <ul>
+                <li><a href="https://www.geeksforgeeks.org/data-structures/" target="_blank">GeeksforGeeks - Data Structures in C</a></li>
+                <li><a href="https://www.tutorialspoint.com/data_structures_algorithms/data_structures_basics.htm" target="_blank">TutorialsPoint - Data Structures</a></li>
+            </ul>
+        </li>
+    </ul>
+
         
         
         
