@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data Structure</title>
+        <link rel="icon" href="img/data icon.png">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0 20px;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            h1, h2, h3 {
+                color: #444;
+            }
+            a {
+                color: #0066cc;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            ul, ol {
+                margin: 10px 0;
+                padding-left: 20px;
+            }
+            pre {
+                background: #f4f4f4;
+                padding: 10px;
+                border-left: 3px solid #ccc;
+                overflow-x: auto;
+            }
+            code {
+                font-family: Consolas, monospace;
+                background: #eee;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+            button{
+                font-size: 12px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                display: inline-block;
+                text-align: center;
+                font-weight: bold;
+                padding: 0.7em 2em;
+                border: 1px solid darkgreen;
+                border-radius: 2px;
+                position: relative;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16) 
+                0 3px 6px rgba(0, 0, 0, 0.1);
+                color: darkgreen;
+                text-decoration: none;
+                transition: 0.3s ease all;
+                z-index: 1;
+             }
+             button:before{
+                transition: 0.5s all ease;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                right: 50%;
+                bottom: 0;
+                opacity: 0;
+                content: '';
+                background-color: lightseagreen;
+                z-index: -1;
+             }
+             button:hover, button:focus{
+                color: white;
+             }
+             button:hover::before, button:focus::before{
+                transition: 0.5s all ease;
+                left: 0;
+                right: 0;
+                opacity: 1;
+             }
+             button:active{
+                transform: scale(0.9);
+             }
+
+        </style>
+        
+    </head>
+
+     <body>
+        <h3><strong>More About Data Structures:
+            <hr>
+        </strong> </h3>
+        <h2>Complexity Analysis</h2>
+<p>Understanding the time and space complexities of common operations in data structures is crucial for selecting the right data structure in various situations. Here's an overview:</p>
+
+<h3>Time Complexity for Common Operations:</h3>
+<table>
+    <tr>
+        <th>Data Structure</th>
+        <th>Access</th>
+        <th>Search</th>
+        <th>Insertion</th>
+        <th>Deletion</th>
+    </tr>
+    <tr>
+        <td>Array</td>
+        <td>O(1)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+    </tr>
+    <tr>
+        <td>Stack</td>
+        <td>O(1)</td>
+        <td>O(n)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+    </tr>
+    <tr>
+        <td>Queue</td>
+        <td>O(1)</td>
+        <td>O(n)</td>
+        <td>O(1)</td>
+        <td>O(1)</td>
+    </tr>
+    <tr>
+        <td>Linked List</td>
+        <td>O(n)</td>
+        <td>O(n)</td>
+        <td>O(1) at head</td>
+        <td>O(1) at head</td>
+    </tr>
+</table>
+<h2>Real-World Applications of Data Structures</h2>
+<ul>
+    <li><strong>Arrays:</strong> Used in implementing lookup tables, static memory allocation in embedded systems.</li>
+    <li><strong>Stacks:</strong> Used in function call management, expression evaluation, and browser history.</li>
+    <li><strong>Queues:</strong> Used in task scheduling, printer queue management, and BFS in graphs.</li>
+    <li><strong>Linked Lists:</strong> Used in dynamic memory allocation, undo functionality, and implementing other data structures like stacks and queues.</li>
+    <li><strong>Trees:</strong> Used in databases for indexing, file system hierarchy, and searching algorithms.</li>
+    <li><strong>Graphs:</strong> Used in social networks, route finding (e.g., GPS navigation), and network analysis.</li>
+</ul>
+<h2>
+    Here Some quizes on the Data Structure:
+</h2>
+<h2>Test Your Knowledge: Data Structures Quiz</h2>
+<form id="quizForm">
+    <h3>1. Which data structure uses the Last In, First Out (LIFO) principle?</h3>
+    <input type="radio" name="q1" value="Stack"> Stack<br>
+    <input type="radio" name="q1" value="Queue"> Queue<br>
+    <input type="radio" name="q1" value="Array"> Array<br>
+    <input type="radio" name="q1" value="Linked List"> Linked List<br><br>
+
+    <h3>2. Which traversal technique visits the root node before its children?</h3>
+    <input type="radio" name="q2" value="Inorder"> Inorder Traversal<br>
+    <input type="radio" name="q2" value="Preorder"> Preorder Traversal<br>
+    <input type="radio" name="q2" value="Postorder"> Postorder Traversal<br>
+    <input type="radio" name="q2" value="Level Order"> Level Order Traversal<br><br>
+
+    <h3>3. What is the time complexity of searching in a balanced binary search tree?</h3>
+    <input type="radio" name="q3" value="O(1)"> O(1)<br>
+    <input type="radio" name="q3" value="O(log n)"> O(log n)<br>
+    <input type="radio" name="q3" value="O(n)"> O(n)<br>
+    <input type="radio" name="q3" value="O(n log n)"> O(n log n)<br><br>
+
+    <h3>4. Which of the following is a dynamic data structure?</h3>
+    <input type="radio" name="q4" value="Array"> Array<br>
+    <input type="radio" name="q4" value="Queue"> Queue<br>
+    <input type="radio" name="q4" value="Linked List"> Linked List<br>
+    <input type="radio" name="q4" value="Both"> Both Queue and Linked List<br><br>
+
+    <h3>5. Which algorithm is used to find the shortest path in a weighted graph?</h3>
+    <input type="radio" name="q5" value="Dijkstra"> Dijkstra's Algorithm<br>
+    <input type="radio" name="q5" value="DFS"> Depth First Search<br>
+    <input type="radio" name="q5" value="BFS"> Breadth First Search<br>
+    <input type="radio" name="q5" value="Kruskal"> Kruskal's Algorithm<br><br>
+
+    <h3>6. What is the space complexity of a recursive function?</h3>
+    <input type="radio" name="q6" value="O(1)"> O(1)<br>
+    <input type="radio" name="q6" value="O(log n)"> O(log n)<br>
+    <input type="radio" name="q6" value="O(n)"> O(n)<br>
+    <input type="radio" name="q6" value="O(n log n)"> O(n log n)<br><br>
+
+    <h3>7. In which data structure is backtracking commonly used?</h3>
+    <input type="radio" name="q7" value="Stack"> Stack<br>
+    <input type="radio" name="q7" value="Queue"> Queue<br>
+    <input type="radio" name="q7" value="Array"> Array<br>
+    <input type="radio" name="q7" value="Linked List"> Linked List<br><br>
+
+    <h3>8. What is the height of a binary tree with 7 nodes?</h3>
+    <input type="radio" name="q8" value="2"> 2<br>
+    <input type="radio" name="q8" value="3"> 3<br>
+    <input type="radio" name="q8" value="4"> 4<br>
+    <input type="radio" name="q8" value="5"> 5<br><br>
+
+    <h3>9. Which data structure is used in Breadth-First Search (BFS)?</h3>
+    <input type="radio" name="q9" value="Stack"> Stack<br>
+    <input type="radio" name="q9" value="Queue"> Queue<br>
+    <input type="radio" name="q9" value="Array"> Array<br>
+    <input type="radio" name="q9" value="Graph"> Graph<br><br>
+
+    <h3>10. What is the purpose of a hash function in a hash table?</h3>
+    <input type="radio" name="q10" value="Store"> To store data sequentially<br>
+    <input type="radio" name="q10" value="Retrieve"> To map keys to indexes<br>
+    <input type="radio" name="q10" value="Encrypt"> To encrypt data<br>
+    <input type="radio" name="q10" value="Compare"> To compare values<br><br>
+
+    <button type="button" onclick="checkAnswers()">Submit Answers</button>
+</form>
+
+<div id="results" style="margin-top:20px; font-weight:bold;"></div>
+
+<script>
+    const answers = {
+        q1: "Stack",
+        q2: "Preorder",
+        q3: "O(log n)",
+        q4: "Both",
+        q5: "Dijkstra",
+        q6: "O(n)",
+        q7: "Stack",
+        q8: "3",
+        q9: "Queue",
+        q10: "Retrieve"
+    };
+
+    function checkAnswers() {
+        const form = document.getElementById('quizForm');
+        const formData = new FormData(form);
+        let score = 0;
+        let total = Object.keys(answers).length;
+
+        for (let [question, correctAnswer] of Object.entries(answers)) {
+            if (formData.get(question) === correctAnswer) {
+                score++;
+            }
+        }
+
+        let message = `You scored ${score} out of ${total}. `;
+        message += score === total 
+            ? "Excellent work! You got all questions correct!" 
+            : score >= total / 2 
+                ? "Good job! Keep practicing to improve further." 
+                : "Don't give up! Review the concepts and try again.";
+
+        document.getElementById('results').innerText = message;
+    }
+</script>
+<h2>Memory Management in Data Structures</h2>
+<p>In C/C++, memory management is crucial for efficient use of memory. Data structures like linked lists and trees rely on dynamic memory allocation, and you need to ensure proper deallocation to avoid memory leaks.</p>
+<pre><code>struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* createNode(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (!newNode) {
+        printf("Memory allocation failed!\n");
+        return NULL;
+    }
+    newNode->data = value;
+    newNode->next = NULL;
+    return newNode;
+}
+
+void freeList(struct Node* head) {
+    struct Node* temp;
+    while (head != NULL) {
+        temp = head;
+        head = head->next;
+        free(temp);
+    }
+}
+</code></pre>
+<h2>Here is an algorithm in Data Structure:</h2>
+<h2>Graph Traversal Algorithms</h2>
+<h3>Depth-First Search (DFS)</h3>
+<p>DFS is a graph traversal algorithm that explores as far down a branch as possible before backtracking. It can be implemented using a stack (or recursion).</p>
+<pre><code>void DFS(struct Graph* graph, int vertex, bool visited[]) {
+    visited[vertex] = true;
+    printf("%d ", vertex);
+
+    struct Node* temp = graph->adjLists[vertex];
+    while (temp != NULL) {
+        if (!visited[temp->vertex]) {
+            DFS(graph, temp->vertex, visited);
+        }
+        temp = temp->next;
+    }
+}
+</code></pre>
+
+<h3>Breadth-First Search (BFS)</h3>
+<p>BFS is a graph traversal algorithm that explores the graph level by level. It uses a queue to keep track of the nodes to visit next.</p>
+<pre><code>void BFS(struct Graph* graph, int startVertex) {
+    bool visited[MAX_VERTICES] = {false};
+    Queue queue;
+    enqueue(&queue, startVertex);
+    visited[startVertex] = true;
+
+    while (!isEmpty(&queue)) {
+        int vertex = dequeue(&queue);
+        printf("%d ", vertex);
+
+        struct Node* temp = graph->adjLists[vertex];
+        while (temp != NULL) {
+            if (!visited[temp->vertex]) {
+                enqueue(&queue, temp->vertex);
+                visited[temp->vertex] = true;
+            }
+            temp = temp->next;
+        }
+    }
+}
+</code></pre>
+<h2>Interactive Visualizations</h2>
+<p>For an interactive experience, check out the following resources:</p>
+<ul>
+    <li><a href="https://visualgo.net/en" target="_blank">VisuAlgo - Data Structure Visualizations</a></li>
+    <li><a href="https://algorithm-visualizer.org/" target="_blank">Algorithm Visualizer</a></li>
+</ul>
+<h3>Click Here For Previous Page:<a href="index.html"><button>
+    Previous Page
+</button></a>
+</h3
+
+     </body>
